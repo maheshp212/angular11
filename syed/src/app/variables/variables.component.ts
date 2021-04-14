@@ -15,6 +15,9 @@ export class VariablesComponent implements OnInit {
   interest: null = null;
   undf:any;
   
+  a = 2;
+  b = 3;
+  
   constructor() { }
 
   ngOnInit(): void {
