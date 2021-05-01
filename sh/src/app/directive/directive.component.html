@@ -1,0 +1,130 @@
+<p>directive works!</p>
+
+<!--
+
+    if any code which starts with ng-  this is angular 1 code
+
+    *ngIf
+    *ngFor
+    [(ngModel)]
+    [ngSwitch]
+    *ngSwitchCase
+    *ngSwitchDefault
+    [hidden]
+    [ngClass]
+    [ngStyle]
+    (click)
+    (mouseover)
+
+    *    -- conditions & loops
+    []   -- attributes
+    ()   -- events 
+    [()] -- two way data binding
+    #    -- local variables
+-->
+
+<!-- *ngIf -- if the condition fails it will remove the element from the DOM-->
+<div *ngIf="fname == 'angular'"> this is if</div>
+
+<!-- [hidden] -- if the condition pass it will add `hidden` attribute to the element-->
+<div [hidden]="fname == 'angular'"> this is hidden</div>
+
+<!-- <div *ngIf="fname == 'angulars'"> this is if 2</div>
+<div [hidden]="fname == 'angulars'"> this is hidden 2 </div> -->
+
+<div [ngSwitch]="fname">
+    <p *ngSwitchCase="'angular'">this is angular </p>
+    <p *ngSwitchCase="'tech'">this is tech </p>
+    <p *ngSwitchCase="'satya'">this is satya </p>
+    <p *ngSwitchCase="'harini'">this is harini </p>
+    <p *ngSwitchDefault>this is default </p>
+</div>
+
+<!-- it works only on array's-->
+<span *ngFor="let item of fruits"> {{item}} </span>
+<ol>
+    <li *ngFor="let x of fruits"> {{x}} </li>
+</ol>
+<select>
+    <option *ngFor="let fruit of fruits"> {{fruit}}</option>
+</select>
+
+<table border="1">
+    <tr >
+        <td *ngFor="let fruit of fruits"> {{fruit}} </td>
+    </tr>
+</table>
+
+<table border="1" *ngIf="false">
+    <tr>
+        <th>ID </th>
+        <th>Name </th>
+        <th>User Name </th>
+        <th>Email </th>
+        <th>Address </th>
+        <th>Phone </th>
+        <th>website </th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.address.street}}, {{user.address.suite}}, {{user.address.city}} 
+            - {{user.address.zipcode}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.website}}</td>
+    </tr>
+</table>
+
+
+<div [ngClass]="{'error': fname=='angular', 'success': fname=='angulars'}" class="normal-class"> this is class</div>
+<div [ngStyle]="{'color': (fname =='angular') ?'yellow':'red'}"> this is style</div>
+
+<input type="text" [(ngModel)]="fname"> {{fname}}
+
+<input type="number" [(ngModel)]="age"> {{age}}
+<div *ngIf="age === '33'">this is number</div>
+
+
+
+Events::
+
+<p (click)="click($event)"> this is click</p>
+<p (dblclick)="callMe()"> this is dblclick</p>
+<p (mouseover)="callMe()"> this is mouseover</p>
+<p (mouseout)="callMe()"> this is mouseout</p>
+<p (mouseenter)="callMe()"> this is mouseenter</p>
+<p (mouseleave)="callMe()"> this is mouseleave</p>
+<p (mousemove)="callMe()"> this is mousemove</p>
+<pre>
+
+    <input type="text" [(ngModel)]="fname" (click)="callMe()" placeholder="click">
+    
+    <input type="text" [(ngModel)]="fname" (focus)="callMe()" placeholder="focus">
+    
+    <input type="text" [(ngModel)]="fname" (blur)="callMe()" placeholder="blur">
+    
+    <input type="text" [(ngModel)]="fname" (change)="callMe()" placeholder="change">
+    
+    <input type="text" [(ngModel)]="fname" (keyup)="callMe()" placeholder="up">
+    
+    <input type="text" [(ngModel)]="fname" (keydown)="callMe()" placeholder="down">
+    
+    <input type="text" [(ngModel)]="fname" (keypress)="callMe()" placeholder="press">
+    
+    <input type="text" [(ngModel)]="fname" (cut)="satya()" placeholder="cut">
+    
+    <input type="text" [(ngModel)]="fname" (copy)="callMe()" placeholder="copy">
+    
+    <input type="text" [(ngModel)]="fname" (paste)="callMe()" placeholder="paste">
+
+
+    
+
+
+
+
+    
+</pre>
+
