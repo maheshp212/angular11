@@ -1,0 +1,31 @@
+<p>obj-forms works!</p>
+<pre>
+<form name="form" #f=ngForm (submit)="f.valid && login()">
+    <input type="text" name="fname" [(ngModel)]="user.fname" #fname=ngModel placeholder="fname"  required minlength="5" maxlength="10"> {{user.fname}}
+    <div *ngIf="f.submitted && fname.hasError('required')">This is a required feild</div>
+    <div *ngIf="f.submitted && fname.hasError('minlength')">Please enter min 5 characters</div>
+    <div *ngIf="f.submitted && fname.hasError('maxlength')">It will accept max of 10 characters</div>
+    
+    <input type="text" name="lname" [(ngModel)]="user.lname" #lname=ngModel placeholder="lname" required>
+    <div *ngIf="lname.touched && lname.hasError('required')">This is a required feild</div>
+    
+    <input type="number" name="age" [(ngModel)]="user.age" #age=ngModel placeholder="age" required min="18" max="40">
+    <div *ngIf="age.hasError('required')">This is a required feild</div>
+    <!-- <div *ngIf="age.hasError('min')">minimum age is 18</div> -->
+    <!-- <div *ngIf="age.hasError('max')">maximum age is 40</div> -->
+   
+    <input type="email" name="email" [(ngModel)]="user.email" #email=ngModel placeholder="Email-ID" required>
+    <div *ngIf="email.hasError('required')">This is a required feild</div>
+    <!-- <div *ngIf="email.invalid">Please enter a valid email</div> -->
+    <!-- <div *ngIf="email.hasError('pattern')">Please enter a valid email</div> -->
+   
+    <input type="phone" name="phone" [(ngModel)]="user.contact" #contact=ngModel placeholder="Contact Number" required pattern="[789][0-9]{9}">
+    <div *ngIf="contact.dirty && contact.hasError('required')">This is a required feild</div>
+    <div *ngIf="contact.dirty && contact.hasError('pattern')">Please enter a valid phone number</div>
+   
+    <input type="date" name="date" [(ngModel)]="user.dob" #dob=ngModel placeholder="date" min="{{minDate}}" max="{{maxDate}}" required>
+    <div *ngIf="dob.hasError('required')">This is a required feild</div>
+   
+    <button>Submit</button>
+</form>
+</pre>

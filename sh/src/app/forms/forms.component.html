@@ -1,0 +1,77 @@
+<p>forms works!</p>
+<!-- <Template Driven Forms [(ngModel)]
+Reactive Forms formControlName -->
+<!--
+    Satya:
+    - filling some info
+    - send data to some place(Eg: DB)
+-->
+<!--
+    Harini:
+    - filling some info
+    - files (type restirction & size restrictions)
+    - Validations
+        - maxlength, minlength
+        - email
+        - regex patterns
+        - required 
+        - min & max
+-->
+<!--
+    when to show the validations
+    - page load
+    - after the click on submit button
+    - whlie typing in the field
+    - after come out of the field
+-->
+<pre>
+<form name="form" #f=ngForm (submit)="f.valid && login()">
+    <input type="text" name="fname" [(ngModel)]="fname" #firstName=ngModel placeholder="fname"  required minlength="5" maxlength="10"> {{fname}}
+    <div *ngIf="f.submitted && firstName.hasError('required')">This is a required feild</div>
+    <div *ngIf="f.submitted && firstName.hasError('minlength')">Please enter min 5 characters</div>
+    <div *ngIf="f.submitted && firstName.hasError('maxlength')">It will accept max of 10 characters</div>
+    
+    <input type="text" name="lname" [(ngModel)]="lname" #lastName=ngModel placeholder="lname" required>
+    <div *ngIf="lastName.touched && lastName.hasError('required')">This is a required feild</div>
+    
+    <input type="number" name="age" [(ngModel)]="age" #ageNumber=ngModel placeholder="age" required min="18" max="40">
+    <div *ngIf="ageNumber.hasError('required')">This is a required feild</div>
+    <!-- <div *ngIf="ageNumber.hasError('min')">minimum age is 18</div> -->
+    <!-- <div *ngIf="ageNumber.hasError('max')">maximum age is 40</div> -->
+    <input type="email" name="email" [(ngModel)]="email" #emailId=ngModel placeholder="Email-ID" required>
+    <div *ngIf="emailId.hasError('required')">This is a required feild</div>
+    <!-- <div *ngIf="emailId.invalid">Please enter a valid email</div> -->
+    <!-- <div *ngIf="emailId.hasError('pattern')">Please enter a valid email</div> -->
+    <input type="phone" name="phone" [(ngModel)]="phone" #contact=ngModel placeholder="Contact Number" required pattern="[789][0-9]{9}">
+    <div *ngIf="contact.dirty && contact.hasError('required')">This is a required feild</div>
+    <div *ngIf="contact.dirty && contact.hasError('pattern')">Please enter a valid phone number</div>
+    <input type="date" name="date" [(ngModel)]="date" #dob=ngModel placeholder="date" min="{{minDate}}" max="{{maxDate}}" required>
+    <div *ngIf="dob.hasError('required')">This is a required feild</div>
+    <button>Submit</button>
+</form>
+<!-- field validations
+    valid :: {{firstName.valid}}
+    invalid :: {{firstName.invalid}}
+    
+    dirty :: {{firstName.dirty}}
+    pristine :: {{firstName.pristine}}
+    
+    touched :: {{firstName.touched}}
+    untouched :: {{firstName.untouched}}
+    
+    required :: {{firstName.hasError('required')}}
+    minlength :: {{firstName.hasError('minlength')}}
+    maxlength :: {{firstName.hasError('maxlength')}}
+
+form validations
+    valid :: {{f.valid}}
+    invalid :: {{f.invalid}}
+
+    dirty :: {{f.dirty}}
+    pristine :: {{f.pristine}}
+
+    touched :: {{f.touched}}
+    untouched :: {{f.untouched}}
+
+    submitted :: {{f.submitted}} -->
+</pre>

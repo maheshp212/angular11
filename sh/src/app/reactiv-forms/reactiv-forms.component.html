@@ -1,0 +1,36 @@
+<!-- pending items from Me
+    min, max email didnt worked in template driven forms
+    min, max for date  email didnt worked in reactive forms
+    custom validations
+-->
+<p>reactiv-forms works!</p>
+<pre>
+<form [formGroup]="loginFormGroup" (submit)="login()">
+    <input type="text" formControlName="fname" placeholder="fname">
+    <div *ngIf="isFormSubmitted && this.loginFormGroup.controls.fname.hasError('required')">This is a required feild</div>
+    <div *ngIf="isFormSubmitted && formControls.fname.hasError('minlength')">Please enter min 5 characters</div>
+    <div *ngIf="isFormSubmitted && formControls.fname.hasError('maxlength')">It will accept max of 10 characters</div>
+    
+    <input type="text"  formControlName="lname" placeholder="lname" >
+    <div *ngIf="formControls.lname.touched && formControls.lname.hasError('required')">This is a required feild</div>
+    
+    <input type="number"  formControlName="age" placeholder="age">
+    <div *ngIf="formControls.age.hasError('required')">This is a required feild</div>
+    <div *ngIf="formControls.age.hasError('min')">minimum age is 18</div>
+    <div *ngIf="formControls.age.hasError('max')">maximum age is 40</div>
+   
+    <input type="email"  formControlName="email" placeholder="Email-ID" >
+    <div *ngIf="formControls.email.hasError('required')">This is a required feild</div>
+    <div *ngIf="formControls.email.invalid">Please enter a valid email</div>
+    <div *ngIf="formControls.email.hasError('pattern')">Please enter a valid email</div>
+   
+    <input type="phone"  formControlName="contact" placeholder="Contact Number" >
+    <div *ngIf="formControls.contact.dirty && formControls.contact.hasError('required')">This is a required feild</div>
+    <div *ngIf="formControls.contact.dirty && formControls.contact.hasError('pattern')">Please enter a valid phone number</div>
+   
+    <input type="date"  formControlName="dob" placeholder="date">
+    <div *ngIf="formControls.dob.hasError('required')">This is a required feild</div>
+   
+    <button>Submit</button>
+</form>
+</pre>
