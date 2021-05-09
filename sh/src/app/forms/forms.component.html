@@ -45,6 +45,7 @@ Reactive Forms formControlName -->
     <input type="phone" name="phone" [(ngModel)]="phone" #contact=ngModel placeholder="Contact Number" required pattern="[789][0-9]{9}">
     <div *ngIf="contact.dirty && contact.hasError('required')">This is a required feild</div>
     <div *ngIf="contact.dirty && contact.hasError('pattern')">Please enter a valid phone number</div>
+    
     <input type="date" name="date" [(ngModel)]="date" #dob=ngModel placeholder="date" min="{{minDate}}" max="{{maxDate}}" required>
     <div *ngIf="dob.hasError('required')">This is a required feild</div>
     <button>Submit</button>

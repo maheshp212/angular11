@@ -21,8 +21,8 @@
    
     <input type="email"  formControlName="email" placeholder="Email-ID" >
     <div *ngIf="formControls.email.hasError('required')">This is a required feild</div>
-    <div *ngIf="formControls.email.invalid">Please enter a valid email</div>
-    <div *ngIf="formControls.email.hasError('pattern')">Please enter a valid email</div>
+    <!-- <div *ngIf="formControls.email.invalid">Please enter a valid email</div> -->
+    <!-- <div *ngIf="formControls.email.hasError('pattern')">Please enter a valid email</div> -->
    
     <input type="phone"  formControlName="contact" placeholder="Contact Number" >
     <div *ngIf="formControls.contact.dirty && formControls.contact.hasError('required')">This is a required feild</div>

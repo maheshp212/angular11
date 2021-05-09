@@ -1,0 +1,44 @@
+<p>pipes works!</p>
+
+<pre>
+    {{fname}}
+    {{fname|lowercase}}
+    {{fname | uppercase}}
+    {{fname | slice:2:5 }}
+
+    {{age}}
+    {{age| number}}
+    {{age| number:'5.5'}}
+    {{age| number:'5.1-2'}}
+    
+    
+    {{age| hexaaaaaaaaaaaaaaaaaaaaaaa}}
+    {{age| hexaaaaaaaaaaaaaaaaaaaaaaa | slice:2:5}}
+    {{15|hexaaaaaaaaaaaaaaaaaaaaaaa}}
+    {{255|hexaaaaaaaaaaaaaaaaaaaaaaa}}
+   
+   {{5 | params:3:5:2}}
+   {{5 | spread:3:5:2}}
+   {{5 | spread:3:5:2:4:6}}
+   {{5 | spread:3:5:2:4:6:10:20}}
+
+    {{age | percent}}
+    
+    {{age |currency}}
+    {{age |currency:'INR'}}
+    {{age |currency:'&#8377;   '}}
+    {{age |currency:'Mahesh '}}
+    {{age |currency:'INR '}}
+    {{age |currency:'&copy;'}}
+
+    {{today}}
+    {{today | date}}
+    {{today | date:'dd-MM-yy'}}
+
+    {{'Mahesh' | postfix:'hello'}}
+    {{'Mahesh' | postfix}}
+
+    {{user}}
+    {{user | json}}
+
+</pre>

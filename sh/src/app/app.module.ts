@@ -11,6 +11,11 @@ import { DirectiveComponent } from './directive/directive.component';
 import { FormsComponent } from './forms/forms.component';
 import { ObjFormsComponent } from './obj-forms/obj-forms.component';
 import { ReactivFormsComponent } from './reactiv-forms/reactiv-forms.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { HexaPipe } from './hexa.pipe';
+import { ParamsPipe } from './params.pipe';
+import { SpreadPipe } from './spread.pipe';
+import { PostfixPipe } from './postfix.pipe';
 
 @NgModule({
   declarations: [ // c, d, p
@@ -21,7 +26,12 @@ import { ReactivFormsComponent } from './reactiv-forms/reactiv-forms.component';
     DirectiveComponent,
     FormsComponent,
     ObjFormsComponent,
-    ReactivFormsComponent
+    ReactivFormsComponent,
+    PipesComponent,
+    HexaPipe,
+    ParamsPipe,
+    SpreadPipe,
+    PostfixPipe
   ],
   imports: [ // modules
     BrowserModule,

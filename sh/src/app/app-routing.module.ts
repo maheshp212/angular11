@@ -5,6 +5,7 @@ import { FormsComponent } from './forms/forms.component';
 import { HomeComponent } from './home/home.component';
 import { IntroComponent } from './intro/intro.component';
 import { ObjFormsComponent } from './obj-forms/obj-forms.component';
+import { PipesComponent } from './pipes/pipes.component';
 import { ReactivFormsComponent } from './reactiv-forms/reactiv-forms.component';
 import { VariablesComponent } from './variables/variables.component';
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'forms', component:FormsComponent},
   {path:'obj-forms', component:ObjFormsComponent},
   {path:'reactive-forms', component:ReactivFormsComponent},
+  {path:'pipes', component:PipesComponent},
 ];
 
 @NgModule({
