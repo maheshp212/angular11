@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { IntroComponent } from './intro/intro.component';
 import { VariablesComponent } from './variables/variables.component';
+import { KanishkComponent } from './kanishk/kanishk.component';
+import { DirectiveComponent } from './directive/directive.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ //Component, Directive , Pipe
     AppComponent,
     HomeComponent,
     IntroComponent,
-    VariablesComponent
+    VariablesComponent,
+    KanishkComponent,
+    DirectiveComponent
   ],
   imports: [ // modules
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [], //service
   bootstrap: [AppComponent]

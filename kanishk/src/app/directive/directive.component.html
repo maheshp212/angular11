@@ -1,0 +1,83 @@
+<p>directive works!</p>
+<!--
+    *ngIf
+    *ngFor
+    [hidden]
+    [ngSwitch]
+    *ngSwitchCase
+    *ngSwitchDefault
+    [ngClass]
+    [ngStyle]
+    [(ngModel)]
+
+    (click)
+    (focus)
+
+    *  -- condition / loops
+    [] -- attributes
+    () -- events
+    [()]- two way data binding 
+    # -- template variables
+
+-->
+
+<p *ngIf="fname == 'angular'">this is if </p>
+<p [hidden]="fname == 'angular'">this is hidden </p>
+
+
+<h1 *ngFor="let item of fruits"> {{item}} </h1>
+
+<ol >
+    <li *ngFor="let x of fruits">{{x}}</li>
+</ol>
+
+<select >
+    <option *ngFor="let fruit of fruits" > {{fruit}}</option>
+</select>
+
+<table border="1">
+    <tr *ngFor="let fruit of fruits">
+        <td > {{fruit}}</td>
+    </tr>
+</table>
+
+<div [ngSwitch]="fname">
+    <div *ngSwitchCase="'angular'">this is switch angular</div>
+    <div *ngSwitchCase="'tech'">this is switch  tech</div>
+    <div *ngSwitchCase="'kanishk'">this is switch  kanishk</div>
+    <div *ngSwitchDefault>this is switch  default</div>
+</div>
+
+<div class="error"> this is class</div>
+<div [ngClass]="{'error': fname == 'angular', 'success': fname != 'angular'}">this is ng class</div>
+<div style="background-color: greenyellow;">this is sytle</div>
+<div [ngStyle]="{'background-color': (fname == 'angular') ? 'greenyellow' : 'red'}">this is ng sytle</div>
+
+<pre>
+
+    <input type="text" [(ngModel)]="fname">
+</pre>
+
+<p (click)="callMe()"> this is click</p>
+<p (dblclick)="callMe()"> this is dbl click</p>
+<p (mouseover)="callMe()"> this is over</p>
+<p (mouseout)="callMe()"> this is out</p>
+<p (mouseenter)="callMe()"> this is ebter</p>
+<p (mouseleave)="callMe()"> this is leave</p>
+<p (mouseup)="callMe()"> this is up</p>
+<p (mousedown)="callMe()"> this is down</p>
+<p (mousemove)="callMe()"> this is move</p>
+
+<pre>
+
+    <input type="text" [(ngModel)]="fname" (click)="callMe()" placeholder="click">
+    <input type="text" [(ngModel)]="fname" (focus)="callMe()" placeholder="focus">
+    <input type="text" [(ngModel)]="fname" (blur)="callMe()" placeholder="blur">
+    <input type="text" [(ngModel)]="fname" (change)="callMe()" placeholder="chagne">
+    <input type="text" [(ngModel)]="fname" (keyup)="callMe()" placeholder="up">
+    <input type="text" [(ngModel)]="fname" (keydown)="callMe()" placeholder="down">
+    <input type="text" [(ngModel)]="fname" (keypress)="callMe()" placeholder="press">
+    <input type="text" [(ngModel)]="fname" (cut)="callMe()" placeholder="cut">
+    <input type="text" [(ngModel)]="fname" (copy)="callMe()" placeholder="copy">
+    <input type="text" [(ngModel)]="fname" (paste)="callMe()" placeholder="paste">
+</pre>
