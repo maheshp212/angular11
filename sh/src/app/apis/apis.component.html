@@ -1,0 +1,30 @@
+<p>apis works!</p>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let post of postsList">
+        <td>{{post.id}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+        <td> 
+            <p (click)="view(post.id)">view</p>
+            <span (click)="edit(post.id)">Edit</span>
+            <div (click)="deletePost(post.id)">Delete</div>
+        </td>
+    </tr>
+</table>
+
+<button (click)="create()">create</button>
+
+<pre>
+    {{postres | json}}
+
+
+
+    
+</pre>

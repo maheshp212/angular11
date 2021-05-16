@@ -16,6 +16,10 @@ import { HexaPipe } from './hexa.pipe';
 import { ParamsPipe } from './params.pipe';
 import { SpreadPipe } from './spread.pipe';
 import { PostfixPipe } from './postfix.pipe';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { ApisComponent } from './apis/apis.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostsService } from './posts.service';
 
 @NgModule({
   declarations: [ // c, d, p
@@ -31,13 +35,16 @@ import { PostfixPipe } from './postfix.pipe';
     HexaPipe,
     ParamsPipe,
     SpreadPipe,
-    PostfixPipe
+    PostfixPipe,
+    LifeCycleComponent,
+    ApisComponent
   ],
   imports: [ // modules
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],//guards & services
   bootstrap: [AppComponent]
