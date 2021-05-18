@@ -9,6 +9,7 @@ import { VariablesComponent } from './variables/variables.component';
 import { KanishkComponent } from './kanishk/kanishk.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { FormsModule } from '@angular/forms';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [ //Component, Directive , Pipe
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     IntroComponent,
     VariablesComponent,
     KanishkComponent,
-    DirectiveComponent
+    DirectiveComponent,
+    PipesComponent
   ],
   imports: [ // modules
     BrowserModule,
