@@ -10,6 +10,10 @@ import { KanishkComponent } from './kanishk/kanishk.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { FormsModule } from '@angular/forms';
 import { PipesComponent } from './pipes/pipes.component';
+import { HexaPipe } from './hexa.pipe';
+import { ParamsPipe } from './params.pipe';
+import { RupeePipe } from './rupee.pipe';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [ //Component, Directive , Pipe
@@ -19,7 +23,11 @@ import { PipesComponent } from './pipes/pipes.component';
     VariablesComponent,
     KanishkComponent,
     DirectiveComponent,
-    PipesComponent
+    PipesComponent,
+    HexaPipe,
+    ParamsPipe,
+    RupeePipe,
+    FormsComponent
   ],
   imports: [ // modules
     BrowserModule,
