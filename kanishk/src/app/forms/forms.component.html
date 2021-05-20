@@ -1,1 +1,48 @@
 <p>forms works!</p>
+<pre>
+<form name="form" #f=ngForm>
+    <input type="text" name="fname" [(ngModel)]="fname" #firstName=ngModel required minlength="5">
+    <!-- <div style="color:red" *ngIf="firstName.invalid"> plese enter a valid value. </div> -->
+    <!-- <div style="color:red" *ngIf="f.submitted && firstName.invalid"> plese enter a valid value. </div> -->
+    <!-- <div style="color:red" *ngIf="firstName.dirty && firstName.invalid"> plese enter a valid value. </div> -->
+    <!-- <div style="color:red" *ngIf="firstName.touched && firstName.invalid"> plese enter a valid value. </div> -->
+    <!-- <div style="color:red" *ngIf="firstName.dirty && firstName.hasError('required')"> This is mandatory field. </div> -->
+    <!-- <div style="color:red" *ngIf="firstName.dirty && firstName.hasError('minlength')"> plese enter  min 5 characters. </div> -->
+    <input type="number" name="age" [(ngModel)]="age" #yourAge=ngModel required min="10" max="30">
+
+    <input type="date" name="date" [(ngModel)]="date" #dob=ngModel min="2020-11-25" max="2021-06-15">
+
+    <input type="phone" name="phone" [(ngModel)]="phone" #contact=ngModel pattern="[789][0-9]{9}">
+
+    <button>submit </button>
+</form>
+****** form validations
+
+dirty :: {{f.dirty}}
+pristine :: {{f.pristine}}
+
+touched :: {{f.touched}}
+untouched :: {{f.untouched}}
+
+valid :: {{f.valid}}
+invalid :: {{f.invalid}}
+
+submitted :: {{f.submitted}}
+
+
+********field validations
+
+dirty :: {{firstName.dirty}}
+pristine :: {{firstName.pristine}}
+
+touched :: {{firstName.touched}}
+untouched :: {{firstName.untouched}}
+
+valid :: {{firstName.valid}}
+invalid :: {{firstName.invalid}}
+
+required :: {{firstName.hasError("required")}}
+minlength :: {{firstName.hasError("minlength")}}
+
+
+</pre>
