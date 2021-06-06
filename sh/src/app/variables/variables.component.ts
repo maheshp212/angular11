@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-variables',
@@ -20,9 +21,12 @@ export class VariablesComponent implements OnInit {
   c:string = '3';
 
 
-  constructor() { }
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.fname = 'angular';
+    this.route.params.subscribe((Res)=>{
+      console.log(Res);
+    })
   }
 }

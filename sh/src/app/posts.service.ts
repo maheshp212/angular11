@@ -6,8 +6,16 @@ import {HttpClient} from '@angular/common/http'
 })
 export class PostsService {
 
+  data:any;
   constructor(private http: HttpClient) { }
 
+  setData(data){
+    this.data = data;
+  }
+  
+  getData(){
+    return this.data;
+  }
   getPosts(){
     let url = 'http://jsonplaceholder.typicode.com/posts?userId=1';
     return this.http.get(url);

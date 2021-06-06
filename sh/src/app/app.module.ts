@@ -20,6 +20,10 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { ApisComponent } from './apis/apis.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostsService } from './posts.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {DemoMaterialModule} from './material.module';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [ // c, d, p
@@ -37,14 +41,18 @@ import { PostsService } from './posts.service';
     SpreadPipe,
     PostfixPipe,
     LifeCycleComponent,
-    ApisComponent
+    ApisComponent,
+    NotfoundComponent
   ],
   imports: [ // modules
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    DemoMaterialModule
   ],
   providers: [],//guards & services
   bootstrap: [AppComponent]

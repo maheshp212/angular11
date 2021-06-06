@@ -36,6 +36,7 @@ export class ApisComponent implements OnInit {
     })
   }
   create(){
+    
     this.posts.createPost().subscribe((res)=>{
       console.log('create success')
       this.postres = res;
