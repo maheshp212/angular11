@@ -7,6 +7,8 @@ import { KanishkComponent } from './kanishk/kanishk.component';
 import { VariablesComponent } from './variables/variables.component';
 import {PipesComponent} from './pipes/pipes.component';
 import { FormsComponent } from './forms/forms.component';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { ApiComponent } from './api/api.component';
 
 const routes: Routes = [
   {path:"home", component: HomeComponent},
@@ -16,6 +18,8 @@ const routes: Routes = [
   {path:"dir", component: DirectiveComponent},
   {path:"pipes", component: PipesComponent},
   {path:"forms", component: FormsComponent},
+  {path:"life", component: LifeCycleComponent},
+  {path:"api", component: ApiComponent},
 ];
 
 @NgModule({

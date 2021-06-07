@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,8 @@ import { HexaPipe } from './hexa.pipe';
 import { ParamsPipe } from './params.pipe';
 import { RupeePipe } from './rupee.pipe';
 import { FormsComponent } from './forms/forms.component';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { ApiComponent } from './api/api.component';
 
 @NgModule({
   declarations: [ //Component, Directive , Pipe
@@ -27,12 +30,15 @@ import { FormsComponent } from './forms/forms.component';
     HexaPipe,
     ParamsPipe,
     RupeePipe,
-    FormsComponent
+    FormsComponent,
+    LifeCycleComponent,
+    ApiComponent
   ],
   imports: [ // modules
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [], //service
   bootstrap: [AppComponent]

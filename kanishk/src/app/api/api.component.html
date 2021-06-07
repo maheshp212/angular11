@@ -1,0 +1,27 @@
+<p>api works!</p>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Avatar</th>
+        <th>First Name</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let user of usersList">
+        <td>{{user.id}}</td>
+        <td> <img src="{{user.avatar}}" ></td>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td>{{user.email}}</td>
+        <td>
+            <p (click)="viewUser(user.id)"> View </p>
+            <p (click)="editUser(user.id)"> Edit </p>
+            <div (click)="deleteUser(user.id)">Delete</div>
+        </td>
+    </tr>
+</table>
+
+<button (click)="createUser()">Create</button>
+{{userInfo | json}}
