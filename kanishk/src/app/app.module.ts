@@ -17,6 +17,10 @@ import { RupeePipe } from './rupee.pipe';
 import { FormsComponent } from './forms/forms.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { ApiComponent } from './api/api.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
+import {MyCustomPaginatorIntl} from './intro/intro.component';
 
 @NgModule({
   declarations: [ //Component, Directive , Pipe
@@ -38,9 +42,12 @@ import { ApiComponent } from './api/api.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule
   ],
-  providers: [], //service
+  providers: [{provide: MatPaginatorIntl, useClass: MyCustomPaginatorIntl}], //service
   bootstrap: [AppComponent]
 })
 export class AppModule { }
