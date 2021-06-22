@@ -31,3 +31,30 @@
     (paste)
     (cut)
 -->
+
+<p *ngIf="fname == 'Perla'"> this is if</p> <!-- if the condition satisfy it will show or else it will hide-->
+<p [hidden]="fname == 'Perla'"> this is hidden</p>  <!-- if the condition satisfy it will hide or else it will show-->
+
+
+<div [ngSwitch]="fname">
+    <p *ngSwitchCase="'Perla'">this is Perla</p>
+    <p *ngSwitchCase="'syed'">this is syed</p>
+    <p *ngSwitchCase="'nishat'">this is nishat</p>
+    <p *ngSwitchDefault>this is Default</p>
+</div>
+
+<h1 *ngFor="let x of fruits"> {{x}}</h1>
+
+<ol>
+    <li *ngFor="let item of fruits"> {{item}}</li>
+</ol>
+
+<table border="1">
+    <tr *ngFor="let fruit of fruits">
+        <td > {{fruit}}</td>
+    </tr>
+</table>
+
+<select >
+    <option *ngFor="let fruit of fruits" > {{fruit}} </option>
+</select>
