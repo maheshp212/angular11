@@ -21,6 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
 import {MyCustomPaginatorIntl} from './intro/intro.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [ //Component, Directive , Pipe
@@ -36,7 +37,8 @@ import {MyCustomPaginatorIntl} from './intro/intro.component';
     RupeePipe,
     FormsComponent,
     LifeCycleComponent,
-    ApiComponent
+    ApiComponent,
+    NotfoundComponent
   ],
   imports: [ // modules
     BrowserModule,

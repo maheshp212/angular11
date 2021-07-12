@@ -3,18 +3,22 @@
 <table border="1">
     <tr>
         <th>ID</th>
-        <th>Avatar</th>
-        <th>First Name</th>
-        <th>LastName</th>
+        <th>Name</th>
         <th>Email</th>
+        <th>Gender</th>
+        <th>Status</th>
+        <th>Created At</th>
+        <th>Updated At</th>
         <th>Actions</th>
     </tr>
     <tr *ngFor="let user of usersList">
         <td>{{user.id}}</td>
-        <td> <img src="{{user.avatar}}" ></td>
-        <td>{{user.first_name}}</td>
-        <td>{{user.last_name}}</td>
+        <td>{{user.name}}</td>
         <td>{{user.email}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.status}}</td>
+        <td>{{user.created_at}}</td>
+        <td>{{user.updated_at}}</td>
         <td>
             <p (click)="viewUser(user.id)"> View </p>
             <p (click)="editUser(user.id)"> Edit </p>

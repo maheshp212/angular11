@@ -9,17 +9,19 @@ import {PipesComponent} from './pipes/pipes.component';
 import { FormsComponent } from './forms/forms.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { ApiComponent } from './api/api.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
-  {path:"home", component: HomeComponent},
+  {path:"", component: HomeComponent}, // if path is empty it will become landing page.
   {path:"intro", component: IntroComponent},
   {path:"varrrrr", component: VariablesComponent},
-  {path:"kanishk", component: KanishkComponent},
+  {path:"kanishk/:category/:brand/:name/:id", component: KanishkComponent}, // Dynamic Urls
   {path:"dir", component: DirectiveComponent},
-  {path:"pipes", component: PipesComponent},
+  {path:"pipes/:id", component: PipesComponent},
   {path:"forms", component: FormsComponent},
   {path:"life", component: LifeCycleComponent},
   {path:"api", component: ApiComponent},
+  {path:"**", component: NotfoundComponent}, // ** is for 404 pages, this should be always at the bottom,
 ];
 
 @NgModule({

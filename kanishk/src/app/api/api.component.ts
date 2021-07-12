@@ -14,7 +14,10 @@ export class ApiComponent implements OnInit {
   constructor(private user:UsersService) { }
 
   ngOnInit(): void {
+    this.getUsers();
+  }
 
+  getUsers(){
     this.user.getUsers().subscribe((res:any)=>{
       //success
       this.usersList = res.data;
@@ -22,11 +25,12 @@ export class ApiComponent implements OnInit {
     },(err)=>{
       //failure
     })
-  }
 
+  }
   createUser(){
     this.user.createUser().subscribe((res)=>{
       this.userInfo = res;
+      this.getUsers();
     },(err)=>{
 
     })
@@ -41,6 +45,7 @@ export class ApiComponent implements OnInit {
   editUser(id){
     this.user.updateUser(id).subscribe((res)=>{
       this.userInfo = res;
+      this.getUsers();
     },(err)=>{
 
     })
@@ -48,6 +53,7 @@ export class ApiComponent implements OnInit {
   deleteUser(id){
     this.user.deleteUser(id).subscribe((res)=>{
       this.userInfo = res;
+      this.getUsers();
     },(err)=>{
 
     })
